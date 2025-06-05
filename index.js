@@ -10,6 +10,10 @@ app.use(cors()); // allow all origins
 
 const UNSPLASH_ACCESS_KEY = process.env.UNSPLASH_ACCESS_KEY;
 
+app.get('/health', (req, res) => {
+  res.status(200).send('OK');
+});
+
 app.get('/api/photos', async (req, res) => {
   try {
     const params = {
